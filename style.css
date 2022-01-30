@@ -1,0 +1,176 @@
+
+*{
+    margin:0;
+    padding: 0;
+    font-family: 'Montserrat',sans-serif;
+}
+body{
+    background: #000000;
+}
+.scrolling{
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	
+}
+.scrolling{
+	position: relative;
+}
+.items-center{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.heart-text{
+	color: white;
+	font-family: 'Niconne',cursive;
+	font-size: 22pt;
+	text-align: center;
+}
+.name{
+	color: white;
+	font-family: 'Niconne',cursive;
+	font-size: 22pt;
+	text-align: center;
+}
+.shape-1{
+    height: 220px;
+    width: 220px;
+    background-image: -webkit-gradient(linear, left top, right bottom, from(#ff0e72), to(#ff66a6));
+    background-image: -o-linear-gradient(top left, #ff0e72, #ff66a6);
+    background-image: linear-gradient(to bottom right, #ff0e72, #ff66a6);
+    border-radius: 50%;
+    position: absolute;
+    bottom: -80px;
+    left: -80px;
+    z-index: -1;
+}
+.shape-2{
+    height: 180px;
+    width: 180px;
+    position: absolute;
+    top: -100px;
+    right: -50px;
+    border-radius: 50%;
+    background-image: -o-linear-gradient(45deg, #0068a5, #7bacfc);
+    background-image: linear-gradient(45deg, #0068a5, #7bacfc);
+}
+.wrapper{
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+.wrapper .card{
+  border-radius: 10px;
+  border: 2px solid rgba(255,255,255,.03);
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(20px);
+  padding: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
+  position: relative;
+  overflow: hidden;
+}
+.wrapper .card::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 70px;
+    background: rgba(255,255,255,0.06);
+    transform: skew(-60deg);
+    animation: shield 2s infinite linear;
+}
+.wrapper .card #proposal{
+  text-align:center;
+  color: white
+}
+.btn{
+    border-radius: 10px;
+    margin-top: 20px;
+    border: 2px solid rgba(255,255,255,.03);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    background: rgba(255,255,255,0.06);
+    font-weight: 600;
+    transition: .6s ease-in-out;
+    display: block;
+}
+.btn.invisible{
+    display: none;
+}
+.wrapper .card .btn.yes:hover{
+    background-color: #30D158;
+}
+.btn.moved{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: fit-content;
+    display: none;
+    transition: .5s ease
+}
+.btn.moved.visible{
+    display: block;
+    z-index: 5;
+}
+.wrapper .lang{
+    color: white;
+    font-weight: 700;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 20px;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+.dialog{
+    background-color: #f5f6f8;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 50%;
+    width: 100%;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border: 2px solid rgba(255,255,255,.03);
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(20px);
+    transform: translateY(100%);
+}
+.dialog.show{
+    transition: .6s ease-out;
+    transform: translateY(0);
+}
+.dialog .great{
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-weight: 700;
+}
+.dialog p{
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-weight: 300;
+}
+@keyframes shield{
+    0%{
+        left: -250px;
+        opacity: 1;
+    }
+    100%{
+        left: 500px;
+        opacity: 0;
+    }
+}
